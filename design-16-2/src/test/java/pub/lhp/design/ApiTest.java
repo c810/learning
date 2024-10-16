@@ -35,22 +35,22 @@ public class ApiTest {
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date currentDate = f.parse("2020-06-18 23:49:46");
 
-        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("小傅哥", "1000998004813441", currentDate)));
+        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("lhp", "1000998004813441", currentDate)));
 
         // 模拟三级负责人审批
         AuthService.auth("1000013", "1000998004813441");
         logger.info("测试结果：{}", "模拟三级负责人审批，王工");
-        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("小傅哥", "1000998004813441", currentDate)));
+        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("lhp", "1000998004813441", currentDate)));
 
         // 模拟二级负责人审批
         AuthService.auth("1000012", "1000998004813441");
         logger.info("测试结果：{}", "模拟二级负责人审批，张经理");
-        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("小傅哥", "1000998004813441", currentDate)));
+        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("lhp", "1000998004813441", currentDate)));
 
         // 模拟一级负责人审批
         AuthService.auth("1000011", "1000998004813441");
         logger.info("测试结果：{}", "模拟一级负责人审批，段总");
-        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("小傅哥", "1000998004813441", currentDate)));
+        logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("lhp", "1000998004813441", currentDate)));
 
 
     }
